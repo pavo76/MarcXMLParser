@@ -1,0 +1,20 @@
+﻿@model MarcXMLParser.Models.Record
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MARC_XML</h4>
+    <hr />
+    Leader: <pre>@Model.Leader</pre><br/>
+    ControlField: <pre>@Model.ControlField008</pre><br/>
+    A: <pre>@Model.Datafield040.SubfieldA</pre>
+    B: <pre>@Model.Datafield040.SubfieldB</pre>
+    C: <pre>@Model.Datafield040.SubfieldC</pre>
+    E: <pre>@Model.Datafield040.SubfieldE</pre>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

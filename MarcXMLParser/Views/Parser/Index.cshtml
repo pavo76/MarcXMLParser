@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MarcXMLParser.Models.MARC_XML>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Broj_Knjige)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XML)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum_preuzimanja)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Broj_Knjige)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XML)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum_preuzimanja)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
