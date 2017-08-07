@@ -36,8 +36,9 @@ namespace MarcXMLParser.Controllers
                 return HttpNotFound();
             }
 
-            Record record= Parser.Parse(mARC_XML.XML);
-            return View(record);
+            Dict dict = new Dict();
+            dict.Dictionary = ParserDict.Parse(mARC_XML.XML);
+            return View(dict);
         }
 
         // GET: Parser/Create
