@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MARC_XML-Web.config Connection String" description="MARC_XML Connection String used in web.config by the application to access the database." defaultValue="Data Source=mssql6.gear.host;Initial Catalog=marcxml;User ID=marcxml;Password=Zy5H7?b-6Erb" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Dominik\\documents\\visual\ studio\ 2017\\Projects\\MarcXMLParser\\MarcXMLParser\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MARC_XML']/@connectionString" />
+  </parameter>
+</parameters>

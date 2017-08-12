@@ -157,14 +157,14 @@
     <Compile Include="HelperClasses\ParserDict.cs" />
     <Compile Include="Models\Dict.cs" />
     <Compile Include="Models\MARC_XML.cs" />
+    <Compile Include="Models\MARC_XML_.cs" />
     <Compile Include="Models\Record.cs" />
-    <Compile Include="Models\XML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\K_DATA_MSO.mdf" />
-    <Content Include="App_Data\K_DATA_MSO_log.ldf">
-      <DependentUpon>K_DATA_MSO.mdf</DependentUpon>
+    <Content Include="App_Data\MARC_XML_PARSER.mdf" />
+    <Content Include="App_Data\MARC_XML_PARSER_log.ldf">
+      <DependentUpon>MARC_XML_PARSER.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -177,6 +177,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\marcxml - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\marcxml - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -188,7 +190,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

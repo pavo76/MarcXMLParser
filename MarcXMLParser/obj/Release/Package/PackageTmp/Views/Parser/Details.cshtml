@@ -1,0 +1,19 @@
+﻿@model MarcXMLParser.Models.Dict
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MARC_XML_</h4>
+    <hr />
+    @foreach(var item in Model.Dictionary)
+    {
+        <pre>@item.Key -> @item.Value</pre>
+    }
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

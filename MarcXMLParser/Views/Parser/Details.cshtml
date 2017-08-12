@@ -1,4 +1,5 @@
 ﻿@model MarcXMLParser.Models.Dict
+
 @{
     ViewBag.Title = "Details";
 }
@@ -6,12 +7,11 @@
 <h2>Details</h2>
 
 <div>
-    <h4>MARC_XML</h4>
-    <p>U rječnik se spremaju podatci tako da se za ključ koji je jednak oznaci xml elementa i vrijednosti tag atributa (npr za element datafield s tagom 040 ključ će biti datafield040). Pod tim ključem se spremaju sve vrijednosti potpolja tako da se svaka vrijednost odvoji s $ znakom i vrijednosti atributa code.</p>
+    <h4>MARC_XML_</h4>
     <hr />
-    @foreach(var el in Model.Dictionary)
+    @foreach(var item in Model.Dictionary)
     {
-        <pre>@el.Key -> @el.Value</pre>
+        <pre>@item.Key -> @item.Value</pre>
     }
 </div>
 <p>

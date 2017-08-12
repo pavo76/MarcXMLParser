@@ -38,28 +38,22 @@ namespace MarcXMLParser.HelperClasses
 
                 if (node.HasAttributes && node.HasElements)
                 {
-                    if (!dict.ContainsKey(node.Name.LocalName + node.Attribute("tag").Value))
-                    {
-                        dict[node.Name.LocalName + node.Attribute("tag").Value] = "";
-                        IEnumerable<XElement> subnodes =
+                    IEnumerable<XElement> subnodes =
                             from el in node.Elements()
                             select el;
-                        foreach(XElement subnode in subnodes)
-                        {
-                            dict[node.Name.LocalName + node.Attribute("tag").Value] += "$" + subnode.Attribute("code").Value + subnode.Value;
-                        }
-                    }
-                    else
+                    
+                    foreach (XElement subnode in subnodes)
                     {
-                        dict[node.Name.LocalName + node.Attribute("tag").Value] +=" && ";
-                        IEnumerable<XElement> subnodes =
-                            from el in node.Elements()
-                            select el;
-                        foreach (XElement subnode in subnodes)
+                        if (!dict.ContainsKey(node.Name.LocalName + node.Attribute("tag").Value + "_"+subnode.Attribute("code").Value))
                         {
-                            dict[node.Name.LocalName + node.Attribute("tag").Value] += "$" + subnode.Attribute("code").Value + subnode.Value;
+                            dict[node.Name.LocalName + node.Attribute("tag").Value + "_" + subnode.Attribute("code").Value] = subnode.Value;
+                        }
+                        else
+                        {
+                            dict[node.Name.LocalName + node.Attribute("tag").Value + "_" + subnode.Attribute("code").Value] += " && " + subnode.Value;
                         }
                     }
+                    
                 }
             }
 

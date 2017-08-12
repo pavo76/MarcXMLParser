@@ -1,0 +1,48 @@
+﻿@model MarcXMLParser.Models.MARC_XML_
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MARC_XML_</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Broj_Knjige)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Broj_Knjige)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.XML)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XML)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum_preuzimanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum_preuzimanja)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -7,20 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MarcXMLParser.Models;
-using System.Xml.Linq;
 using MarcXMLParser.HelperClasses;
-using System.IO;
 
 namespace MarcXMLParser.Controllers
 {
     public class ParserController : Controller
     {
-        private XML db = new XML();
+        private MARC_XML db = new MARC_XML();
 
         // GET: Parser
         public ActionResult Index()
         {
-            return View(db.MARC_XML.ToList());
+            return View(db.MARC_XML_.ToList());
         }
 
         // GET: Parser/Details/5
@@ -30,14 +28,13 @@ namespace MarcXMLParser.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MARC_XML mARC_XML = db.MARC_XML.Find(id);
-            if (mARC_XML == null)
+            MARC_XML_ mARC_XML_ = db.MARC_XML_.Find(id);
+            if (mARC_XML_ == null)
             {
                 return HttpNotFound();
             }
-
             Dict dict = new Dict();
-            dict.Dictionary = ParserDict.Parse(mARC_XML.XML);
+            dict.Dictionary = ParserDict.Parse(mARC_XML_.XML);
             return View(dict);
         }
 
@@ -52,16 +49,16 @@ namespace MarcXMLParser.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ID_Broj_Knjige,XML,Datum_preuzimanja")] MARC_XML mARC_XML)
+        public ActionResult Create([Bind(Include = "ID,ID_Broj_Knjige,XML,Datum_preuzimanja")] MARC_XML_ mARC_XML_)
         {
             if (ModelState.IsValid)
             {
-                db.MARC_XML.Add(mARC_XML);
+                db.MARC_XML_.Add(mARC_XML_);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(mARC_XML);
+            return View(mARC_XML_);
         }
 
         // GET: Parser/Edit/5
@@ -71,12 +68,12 @@ namespace MarcXMLParser.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MARC_XML mARC_XML = db.MARC_XML.Find(id);
-            if (mARC_XML == null)
+            MARC_XML_ mARC_XML_ = db.MARC_XML_.Find(id);
+            if (mARC_XML_ == null)
             {
                 return HttpNotFound();
             }
-            return View(mARC_XML);
+            return View(mARC_XML_);
         }
 
         // POST: Parser/Edit/5
@@ -84,15 +81,15 @@ namespace MarcXMLParser.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ID_Broj_Knjige,XML,Datum_preuzimanja")] MARC_XML mARC_XML)
+        public ActionResult Edit([Bind(Include = "ID,ID_Broj_Knjige,XML,Datum_preuzimanja")] MARC_XML_ mARC_XML_)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(mARC_XML).State = EntityState.Modified;
+                db.Entry(mARC_XML_).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(mARC_XML);
+            return View(mARC_XML_);
         }
 
         // GET: Parser/Delete/5
@@ -102,12 +99,12 @@ namespace MarcXMLParser.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MARC_XML mARC_XML = db.MARC_XML.Find(id);
-            if (mARC_XML == null)
+            MARC_XML_ mARC_XML_ = db.MARC_XML_.Find(id);
+            if (mARC_XML_ == null)
             {
                 return HttpNotFound();
             }
-            return View(mARC_XML);
+            return View(mARC_XML_);
         }
 
         // POST: Parser/Delete/5
@@ -115,8 +112,8 @@ namespace MarcXMLParser.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MARC_XML mARC_XML = db.MARC_XML.Find(id);
-            db.MARC_XML.Remove(mARC_XML);
+            MARC_XML_ mARC_XML_ = db.MARC_XML_.Find(id);
+            db.MARC_XML_.Remove(mARC_XML_);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

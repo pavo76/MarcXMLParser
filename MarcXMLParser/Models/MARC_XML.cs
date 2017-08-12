@@ -1,20 +1,21 @@
 namespace MarcXMLParser.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    using System.Linq;
 
-    public partial class MARC_XML
+    public partial class MARC_XML : DbContext
     {
-        public int ID { get; set; }
+        public MARC_XML()
+            : base("name=MARC_XML")
+        {
+        }
 
-        public int? ID_Broj_Knjige { get; set; }
+        public virtual DbSet<MARC_XML_> MARC_XML_ { get; set; }
 
-        [Required]
-        public string XML { get; set; }
-
-        public DateTime Datum_preuzimanja { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+        }
     }
 }
