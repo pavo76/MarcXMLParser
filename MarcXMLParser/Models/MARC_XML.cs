@@ -17,5 +17,7 @@ namespace MarcXMLParser.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        public System.Data.Entity.DbSet<MarcXMLParser.Models.tbl_Parsed_Data> tbl_Parsed_Data { get; set; }
     }
 }

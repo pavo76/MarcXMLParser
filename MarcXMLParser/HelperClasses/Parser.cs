@@ -9,9 +9,9 @@ namespace MarcXMLParser.HelperClasses
 {
     public class Parser
     {
-        public static Record Parse(string xml)
+        public static RecordOld Parse(string xml)
         {
-            Record record = new Record();
+            RecordOld record = new RecordOld();
             XElement root = XElement.Parse(xml);
             IEnumerable<XElement> nodes =
                 from el in root.Elements()

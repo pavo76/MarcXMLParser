@@ -30,7 +30,7 @@ namespace MarcXMLParser.HelperClasses
 
                 if (node.HasAttributes && !node.HasElements)
                 {
-                    if (!dict.ContainsKey(node.Name.LocalName + node.Attribute("tag").Value))
+                    if (!dict.ContainsKey(node.Name.LocalName +"_"+ node.Attribute("tag").Value))
                     {
                         dict[node.Name.LocalName+node.Attribute("tag").Value] = node.Value;
                     }
@@ -44,13 +44,13 @@ namespace MarcXMLParser.HelperClasses
                     
                     foreach (XElement subnode in subnodes)
                     {
-                        if (!dict.ContainsKey(node.Name.LocalName + node.Attribute("tag").Value + "_"+subnode.Attribute("code").Value))
+                        if (!dict.ContainsKey(node.Name.LocalName +"_"+ node.Attribute("tag").Value + "_"+subnode.Attribute("code").Value))
                         {
-                            dict[node.Name.LocalName + node.Attribute("tag").Value + "_" + subnode.Attribute("code").Value] = subnode.Value;
+                            dict[node.Name.LocalName +"_"+ node.Attribute("tag").Value + "_" + subnode.Attribute("code").Value] = subnode.Value;
                         }
                         else
                         {
-                            dict[node.Name.LocalName + node.Attribute("tag").Value + "_" + subnode.Attribute("code").Value] += " && " + subnode.Value;
+                            dict[node.Name.LocalName +"_"+ node.Attribute("tag").Value + "_" + subnode.Attribute("code").Value] += " && " + subnode.Value;
                         }
                     }
                     

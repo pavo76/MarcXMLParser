@@ -1,0 +1,639 @@
+﻿@model IEnumerable<MarcXMLParser.Models.tbl_Parsed_Data>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.leader)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.controlfield_003)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.controlfield_005)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.controlfield_008)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_020_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_022_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_035_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_040_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_040_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_040_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_040_d)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_040_e)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_041_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_041_h)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_044_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_080_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_100_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_100_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_110_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_110_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_245_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_245_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_245_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_245_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_245_p)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_260_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_260_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_260_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_300_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_300_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_300_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_310_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_362_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_440_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_440_v)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_490_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_490_v)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_500_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_504_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_505_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_520_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_546_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_550_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_555_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_653_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_700_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_700_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_700_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_740_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_776_t)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_776_x)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_780_t)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_780_x)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_830_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_830_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_830_p)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_830_v)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_856_u)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_856_z)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_d)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_h)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_i)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_t)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_942_u)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_0)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_d)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_e)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_h)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_i)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_l)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_o)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_p)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_q)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_r)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_s)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_t)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_v)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_w)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_y)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_952_z)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_991_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_992_a)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_992_b)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_992_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_992_d)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_992_e)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_999_c)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datafield_999_d)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.leader)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.controlfield_003)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.controlfield_005)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.controlfield_008)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_020_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_022_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_035_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_040_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_040_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_040_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_040_d)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_040_e)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_041_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_041_h)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_044_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_080_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_100_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_100_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_110_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_110_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_245_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_245_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_245_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_245_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_245_p)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_260_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_260_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_260_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_300_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_300_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_300_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_310_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_362_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_440_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_440_v)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_490_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_490_v)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_500_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_504_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_505_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_520_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_546_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_550_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_555_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_653_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_700_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_700_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_700_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_740_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_776_t)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_776_x)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_780_t)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_780_x)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_830_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_830_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_830_p)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_830_v)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_856_u)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_856_z)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_d)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_h)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_i)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_t)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_942_u)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_0)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_d)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_e)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_h)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_i)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_l)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_o)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_p)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_q)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_r)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_s)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_t)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_v)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_w)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_y)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_952_z)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_991_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_992_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_992_b)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_992_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_992_d)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_992_e)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_999_c)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datafield_999_d)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

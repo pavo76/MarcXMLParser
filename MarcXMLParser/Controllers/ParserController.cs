@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MarcXMLParser.Models;
 using MarcXMLParser.HelperClasses;
+using System.Reflection;
 
 namespace MarcXMLParser.Controllers
 {
@@ -35,6 +36,23 @@ namespace MarcXMLParser.Controllers
             }
             Dict dict = new Dict();
             dict.Dictionary = ParserDict.Parse(mARC_XML_.XML);
+            tbl_Parsed_Data data = new tbl_Parsed_Data();
+            List<string> dataProps = new List<string>();
+            foreach(var item in data.GetType().GetProperties().ToList())
+            {
+                dataProps.Add(item.Name);
+            }
+
+            foreach (var item in dict.Dictionary)
+            {
+                if(dataProps.Contains(item.Key))
+                {
+                    data.GetType().GetProperty(item.Key).SetValue(data,item.Value);
+                }
+            }
+            Parsed_DataController controller = new Parsed_DataController();
+            controller.ControllerContext = ControllerContext;
+            controller.Create(data);
             return View(dict);
         }
 
